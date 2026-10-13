@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PR02COL Digital Marketplace">
+  <title>PR02COL Digital Marketplace</title>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #101c35;
+      --teal: #087f8c;
+      --ink: #172033;
+      --muted: #64748b;
+      --page: #f1f5f9;
+      --white: #ffffff;
+      --gold: #fbbf24;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--page);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 22px 16px;
+      text-align: center;
+    }
+    header h1 { font-size: 25px; margin-bottom: 8px; }
+    header p { color: #cbd5e1; font-size: 14px; }
+
+    nav {
+      background: var(--white);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 12px 10px;
+      gap: 12px 22px;
+      box-shadow: 0 2px 8px #00000010;
+    }
+    nav a {
+      color: #243653;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    nav a:hover, .card a:hover { text-decoration: underline; }
+
+    .container { max-width: 900px; margin: auto; padding: 20px 15px; }
+
+    .welcome {
+      background: linear-gradient(135deg, #123c69, var(--teal));
+      color: var(--white);
+      border-radius: 16px;
+      padding: 28px 20px;
+      margin-bottom: 22px;
+    }
+    .welcome h2 { font-size: 25px; margin-bottom: 12px; }
+    .welcome p { line-height: 1.6; margin-bottom: 20px; }
+
+    .button, button {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--ink);
+      border: none;
+      border-radius: 8px;
+      padding: 12px 18px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:disabled { opacity: .65; cursor: wait; }
+
+    .section-title { margin: 24px 0 14px; font-size: 20px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+    }
+    .card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 20px 14px;
+      box-shadow: 0 3px 12px #00000008;
+    }
+    .card .icon { font-size: 28px; margin-bottom: 12px; }
+    .card h3 { font-size: 16px; margin-bottom: 8px; }
+    .card p { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 15px; }
+    .card a { color: var(--teal); text-decoration: none; font-size: 13px; font-weight: bold; }
+
+    .auth-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: 0 3px 12px #00000008;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .auth-card > p { color: var(--muted); font-size: 14px; margin: 7px 0 18px; }
+    .form-row { margin-bottom: 15px; }
+    label { display: block; font-size: 14px; font-weight: bold; margin-bottom: 6px; }
+    input {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font: inherit;
+      background: #fff;
+    }
+    input:focus { outline: 2px solid #8bd4d9; border-color: var(--teal); }
+    #signup-message { margin-top: 14px; font-size: 14px; overflow-wrap: anywhere; }
+    .notice {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #9a3412;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-top: 22px;
+    }
+    footer { text-align: center; padding: 25px 12px; color: var(--muted); font-size: 13px; }
+
+    @media (max-width: 480px) {
+      header h1, .welcome h2 { font-size: 22px; }
+      .container { padding: 16px 12px; }
+      .welcome { padding: 23px 16px; }
+      nav { gap: 10px 14px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>PR02COL Marketplace</h1>
+    <p>Your Digital Services Marketplace</p>
+  </header>
+
+  <nav aria-label="Main navigation">
+    <a href="#home">🏠 Home</a>
+    <a href="#profile">👤 Profile</a>
+    <a href="#numbers">📱 Buy Numbers</a>
+    <a href="#payment">💳 Payment</a>
+    <a href="#balance">💰 Balance</a>
+    <a href="#registration">📝 Register</a>
+  </nav>
+
+  <main class="container">
+    <section class="welcome" id="home">
+      <h2>Welcome to PR02COL!</h2>
+      <p>Discover digital services, explore number services, and manage your marketplace account in one place.</p>
+      <a class="button" href="#numbers">Get Started →</a>
+    </section>
+
+    <h2 class="section-title">Your Marketplace</h2>
+    <div class="grid">
+      <section class="card" id="profile">
+        <div class="icon" aria-hidden="true">👤</div>
+        <h3>My Profile</h3>
+        <p>View and manage your account information.</p>
+        <a href="#registration">Create an account →</a>
+      </section>
+
+      <section class="card" id="numbers">
+        <div class="icon" aria-hidden="true">📱</div>
+        <h3>Buy Numbers</h3>
+        <p>Explore phone-number services available in the marketplace.</p>
+        <a href="#notice">Service information →</a>
+      </section>
+
+      <section class="card" id="payment">
+        <div class="icon" aria-hidden="true">💳</div>
+        <h3>Payments</h3>
+        <p>Payment options will be available after a secure payment system is connected.</p>
+        <a href="#notice">Payment information →</a>
+      </section>
+
+      <section class="card" id="balance">
+        <div class="icon" aria-hidden="true">💰</div>
+        <h3>My Balance</h3>
+        <p>Account balance requires a secure backend and verified transaction records.</p>
+        <a href="#notice">Balance information →</a>
+      </section>
+    </div>
+
+    <h2 class="section-title">Create Your Account</h2>
+    <section class="auth-card" id="registration">
+      <h3>Register with your email</h3>
+      <p>Create an account using a valid email address and a password of at least 8 characters.</p>
+
+      <form id="signup-form">
+        <div class="form-row">
+          <label for="signup-email">Email Address</label>
+          <input
+            type="email"
+            id="signup-email"
+            name="email"
+            placeholder="Enter your email"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="form-row">
+          <label for="signup-password">Password</label>
+          <input
+            type="password"
+            id="signup-password"
+            name="password"
+            placeholder="At least 8 characters"
+            autocomplete="new-password"
+            minlength="8"
+            required
+          >
+        </div>
+
+        <button type="submit" id="signup-button">Create Account</button>
+        <p id="signup-message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <h2 class="section-title">About PR02COL</h2>
+    <section class="card">
+      <h3>Your marketplace, in one place</h3>
+      <p>PR02COL is designed to bring your digital marketplace services together in a simple and convenient interface.</p>
+    </section>
+
+    <div class="notice" id="notice">
+      <strong>Setup notice:</strong>
+      This page is a website interface, not a complete live marketplace yet. Live inventory, country prices, customer balances,
+      and payment verification must be connected to a secure backend before customers use them.
+    </div>
+  </main>
+
+  <footer>© 2026 PR02COL Marketplace. All rights reserved.</footer>
+
+  <!-- Supabase's publishable key is intended for browser use. Protect data with Supabase Auth and Row Level Security (RLS). -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    // Keep the project's existing Supabase project URL and publishable key.
+    const SUPABASE_URL = 'https://vqvoebramvtpibtzurlh.supabase.co';
+    const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_6Jjm3ptVwO_AkEk7nxQboQ_QTeIPy_f';
+
+    const signupForm = document.getElementById('signup-form');
+    const signupMessage = document.getElementById('signup-message');
+    const signupButton = document.getElementById('signup-button');
+
+    // Check that the Supabase library loaded before trying to use it.
+    let supabaseClient = null;
+    if (window.supabase && typeof window.supabase.createClient === 'function') {
+      supabaseClient = window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+      );
+    } else {
+      signupMessage.textContent = 'Account registration is temporarily unavailable because the authentication library did not load.';
+      signupButton.disabled = true;
+    }
+
+    signupForm.addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      if (!supabaseClient) {
+        signupMessage.textContent = 'Registration is unavailable right now. Please try again later.';
+        return;
+      }
+
+      const email = document.getElementById('signup-email').value.trim();
+      const password = document.getElementById('signup-password').value;
+
+      if (password.length < 8) {
+        signupMessage.textContent = 'Please use a password with at least 8 characters.';
+        return;
+      }
+
+      signupButton.disabled = true;
+      signupMessage.textContent = 'Creating your account...';
+
+      try {
+        const { data, error } = await supabaseClient.auth.signUp({
+          email: email,
+          password: password
+        });
+
+        if (error) throw error;
+
+        if (data && data.session) {
+          signupMessage.textContent = 'Account created successfully. You are signed in.';
+        } else {
+          signupMessage.textContent = 'Registration started. Check your email for a confirmation link if email confirmation is enabled.';
+        }
+
+        signupForm.reset();
+      } catch (error) {
+        console.error('Signup error:', error);
+        signupMessage.textContent = error && error.message
+          ? 'Registration failed: ' + error.message
+          : 'Registration failed. Please try again.';
+      } finally {
+        signupButton.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
